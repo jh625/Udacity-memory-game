@@ -1,0 +1,243 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.score-panel {
+  text-align: left;
+  font-family: courier;
+  width: 460px;
+  margin-bottom: 10px;
+  background-color: #000080;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.counter {
+  color: #fff;
+}
+
+.timer {
+  color: #fff;
+}
+
+.current-rate {
+  color: white;
+}
+
+.score-panel .star-rating {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.score-panel .star-rating li {
+  list-style: none;
+  display: inline-block;
+}
+
+body {
+  background-color: #87ceeb;
+}
+
+h1 {
+  color: white;
+  font-family: courier;
+}
+
+.card-deck {
+  display: flex;
+  justify-content: center;
+}
+
+.deck {
+  width: 700px;
+  min-height: 680px;
+  background: #000080;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 12px 15px 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 3em;
+}
+
+.deck .card {
+  height: 150px;
+  width: 150px;
+  margin: 0.2em 0.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 20px 0;
+  font-size: 0;
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    cursor: default;
+    animation-name: flipInY;
+    backface-visibility: visible !important;
+    animation-duration: .75s;
+    background: #D3D3D3;
+}
+
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    background: #008000;
+    cursor: default;
+    font-size: 33px;
+    animation-name: rubberBand;
+    backface-visibility: visible !important;
+    animation-duration: .75s;
+}
+
+.deck .card.unMatch {
+    background: #FF0000;
+    animation-name: pulse;
+    backface-visibility: visible !important;
+    animation-duration: .75s;
+    cursor: default;
+    font-size: 33px;
+}
+
+.back {
+ background: blue;
+ position: absolute;
+ left: 0;
+ top: 0;
+ padding: 0;
+ border: none;
+ outline: none;
+}
+
+.check {
+    transform: rotateY(180deg);
+}
+
+
+/*color's for the button icons*/
+
+.fa {
+  color: white;
+}
+
+.modal {
+  position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.62);
+	transition: opacity 500ms;
+  /* Hides modal */
+	visibility: hidden;
+  /* Solves a bug that causes stars to stay on screen after closing modal */
+	opacity: 0;
+}
+
+.result {
+   top: 22.62em;
+   left: 42.75em;
+   width: 500px;
+   background-color: #D3D3D3;
+   border-radius: 30px;
+}
+
+.show {
+  /* Without these two (with !important), modal doesn't appear when game is won */
+	visibility: visible !important;
+	opacity: 100 !important;
+}
+
+
+@keyframes flipInY {
+    from {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    40% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+        animation-timing-function: ease-in;
+    }
+
+    60% {
+        transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+
+    to {
+        transform: perspective(400px);
+    }
+}
+
+@keyframes rubberBand {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, .95, 1);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        transform: scale3d(1.2, 1.2, 1.2);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}

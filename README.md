@@ -16,3 +16,5 @@ This project consists of the following assets:
 -app.js - contains all the board actions & logic.
 -"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" was used as a game dependency.
 -Fontawesome was used to display game card's icons
+
+https://github.com/jh625/Udacity-memory-game.git - click to play!

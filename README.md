@@ -1,5 +1,4 @@
 # Udacity-memory-game
-The memory card game where you have to match 8 sets of cards.
 Game Rules
 The game board contains sixteen "cards" arranged in a grid. The deck is made up of eight different pairs of cards, each with different symbols on one side. The cards are arranged randomly on the grid with the symbol face down. The rules to the game are very simple: flip over two hidden cards at a time to locate the ones that match!
 

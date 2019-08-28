@@ -120,22 +120,12 @@ function changeRating() {
 function moveCounter() {
     moves++;
     counter.innerHTML = moves;
-  // Sets star rating based on number of moves. (Note: using display: none for removed stars instead of visibility: collapse, because with visibility: collapse, row is centered as if stars are still present)
-  if (moves > 8 && moves < 12) {
-    for (i = 0; i < 3; i++) {
-      if (i > 1) {
-        stars[i].style.display = 'none';
+      lastMoves.innerHTML = moves;
+  // setting rates based on moves
+      if (moves <= 20 && moves !== 0) {
+          changeRating()
       }
-    }
   }
-  else if (moves > 13) {
-    for (i = 0; i < 3; i++) {
-      if (i > 0) {
-        stars[i].style.display = 'none';
-      }
-    }
-  }
-}
 
 
 function restarValue() {
